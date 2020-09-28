@@ -11,7 +11,7 @@ Documentation  As a tester
 ${browser}    chrome
 ${SITEURL}    https://nhs--nhstest.my.salesforce.com/
 ${Username}   swapna.panthangi-cic-uk@ibm.com.nhstest
-${Password}   Omsrisairam$6
+${Password}   Nhs@061990
 ${ClickLogin}
 #${Title}        NHS Test & Trace
 ${actual_url}   https://nhs--nhstest.lightning.force.com/lightning/page/home
