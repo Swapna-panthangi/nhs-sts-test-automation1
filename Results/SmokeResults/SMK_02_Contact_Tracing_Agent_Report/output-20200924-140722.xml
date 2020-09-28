@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on darwin)" generated="20200924 14:07:22.508" rpa="false">
+<suite id="s1" name="SMK 02 Contact Tracing Agent" source="/Users/swapnapanthangi/Robot_Automation_Test/TestSuite/SmokeTest/SMK_02_Contact_Tracing_Agent.robot">
+<test id="s1-t1" name="Given Agent Logs in">
+<kw name="Open Login Page" library="AgentLogin">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver.chrome.options'].Options()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20200924 14:07:22.801" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10e571c70&gt;</msg>
+<status status="PASS" starttime="20200924 14:07:22.801" endtime="20200924 14:07:22.801"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20200924 14:07:22.801" endtime="20200924 14:07:22.801"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${SITEURL}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:22.802" level="INFO">Opening browser 'chrome' to base url 'https://nhs--nhstest.my.salesforce.com/'.</msg>
+<status status="PASS" starttime="20200924 14:07:22.802" endtime="20200924 14:07:27.861"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:username</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:27.862" level="INFO">Typing text 'swapna.panthangi-cic-uk@ibm.com.nhstest' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20200924 14:07:27.862" endtime="20200924 14:07:28.243"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:28.244" level="INFO">Typing text 'Nhs@061990' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200924 14:07:28.243" endtime="20200924 14:07:28.628"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:Login</arg>
+<arg>${ClickLogin}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:28.629" level="INFO">Clicking element 'id:Login'.</msg>
+<status status="PASS" starttime="20200924 14:07:28.628" endtime="20200924 14:07:28.689"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20200924 14:07:28.689" endtime="20200924 14:07:28.690"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${Title}</var>
+</assign>
+<msg timestamp="20200924 14:07:33.536" level="INFO">${Title} = </msg>
+<status status="PASS" starttime="20200924 14:07:28.690" endtime="20200924 14:07:33.536"></status>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${new_url}</var>
+</assign>
+<msg timestamp="20200924 14:07:33.541" level="INFO">${new_url} = https://nhs--nhstest.lightning.force.com/one/one.app</msg>
+<status status="PASS" starttime="20200924 14:07:33.536" endtime="20200924 14:07:33.541"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:22.800" endtime="20200924 14:07:33.541"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200924 14:07:33.541" endtime="20200924 14:07:34.144"></status>
+</kw>
+<tags>
+<tag>SmokeTest</tag>
+</tags>
+<status status="PASS" starttime="20200924 14:07:22.800" endtime="20200924 14:07:34.145" critical="yes"></status>
+</test>
+<test id="s1-t2" name="When Click on Start contact Tracing">
+<kw name="Dropdown Menu Selection" library="AgentLogin">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${DropdownMenu}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:34.148" level="INFO">Clicking element 'xpath://button[@title='Show Navigation Menu']'.</msg>
+<status status="PASS" starttime="20200924 14:07:34.147" endtime="20200924 14:07:34.195"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:34.147" endtime="20200924 14:07:34.195"></status>
+</kw>
+<kw name="Start contact Tracing" library="TestDependencies_cases">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Clickdropdown}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:34.196" level="INFO">Clicking element 'xpath: //button[@title='Show Navigation Menu']'.</msg>
+<status status="PASS" starttime="20200924 14:07:34.196" endtime="20200924 14:07:34.239"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CaseSearch}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:34.239" level="INFO">Clicking element 'xpath://input[contains(@name,'Case-search-input')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:34.239" endtime="20200924 14:07:35.209"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CaseSearch}</arg>
+<arg>${caseNumber}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:35.209" level="INFO">Typing text '00002714' into text field 'xpath://input[contains(@name,'Case-search-input')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:35.209" endtime="20200924 14:07:35.837"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SelectCaseNumber}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:35.837" level="INFO">Clicking element 'xpath://a[contains(@title, '00002714')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:35.837" endtime="20200924 14:07:36.046"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ClickContactTracingtab}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20200924 14:07:36.047" endtime="20200924 14:07:37.853"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ClickContactTracingtab}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:37.853" level="INFO">Clicking element 'xpath://li[contains(@title, 'Start Contact Tracing')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:37.853" endtime="20200924 14:07:37.958"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20200924 14:07:41.959" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200924 14:07:37.958" endtime="20200924 14:07:41.959"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ClickFeedtab}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:41.960" level="INFO">Clicking element 'xpath://li[contains(@title, 'Feed')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:41.959" endtime="20200924 14:07:42.030"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20200924 14:07:46.032" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200924 14:07:42.030" endtime="20200924 14:07:46.032"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ClickDetailstab}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:46.032" level="INFO">Clicking element 'xpath://li[contains(@title, 'Details')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:46.032" endtime="20200924 14:07:46.104"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20200924 14:07:50.105" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200924 14:07:46.104" endtime="20200924 14:07:50.105"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CloseCase}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:50.105" level="INFO">Clicking element 'xpath://button[contains(@title,'Close 00002714')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:50.105" endtime="20200924 14:07:50.184"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:34.195" endtime="20200924 14:07:50.184"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:34.146" endtime="20200924 14:07:50.185" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Then Agent Logs out">
+<kw name="Agent Logout" library="Logout">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${clickprofile}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200924 14:07:50.186" endtime="20200924 14:07:50.211"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${clickprofile}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:50.212" level="INFO">Clicking element 'xpath://span[contains(@class,'uiImage')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:50.212" endtime="20200924 14:07:50.299"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ClickLogout}</arg>
+</arguments>
+<msg timestamp="20200924 14:07:50.300" level="INFO">Clicking element 'xpath://a[contains(@class,'profile-link-label logout uiOutputURL')]'.</msg>
+<status status="PASS" starttime="20200924 14:07:50.299" endtime="20200924 14:07:50.949"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:50.185" endtime="20200924 14:07:50.950"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:50.185" endtime="20200924 14:07:50.950" critical="yes"></status>
+</test>
+<test id="s1-t4" name="[Teardown]">
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20200924 14:07:50.951" endtime="20200924 14:07:51.179"></status>
+</kw>
+<status status="PASS" starttime="20200924 14:07:50.951" endtime="20200924 14:07:51.180" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200924 14:07:22.510" endtime="20200924 14:07:51.182"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">SmokeTest</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="SMK 02 Contact Tracing Agent">SMK 02 Contact Tracing Agent</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

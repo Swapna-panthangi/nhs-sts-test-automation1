@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on darwin)" generated="20200903 15:54:41.410" rpa="false">
+<suite id="s1" name="NHSCON 001 Login" source="/Users/swapnapanthangi/Robot_Automation_Test/Tests/NHS_TnT_Application/SmokeTests/NHSCON_001_Login.robot">
+<test id="s1-t1" name="Scenario: NHS Test&amp;Trace screen visible after successful login">
+<kw name="Given the user has browsed to the login page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${SITEURL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200903 15:54:42.256" level="INFO">Opening browser 'chrome' to base url 'https://nhs--nhstest.my.salesforce.com/'.</msg>
+<status status="PASS" starttime="20200903 15:54:42.255" endtime="20200903 15:54:55.465"></status>
+</kw>
+<status status="PASS" starttime="20200903 15:54:42.253" endtime="20200903 15:54:55.467"></status>
+</kw>
+<kw name="When The user enters the Username">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:username</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20200903 15:54:55.470" level="INFO">Typing text 'swapna.panthangi-cic-uk@ibm.com.nhstest' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20200903 15:54:55.469" endtime="20200903 15:54:56.588"></status>
+</kw>
+<status status="PASS" starttime="20200903 15:54:55.468" endtime="20200903 15:54:56.589"></status>
+</kw>
+<kw name="And The user enters the Password">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20200903 15:54:56.592" level="INFO">Typing text 'Omsrisairam$6' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200903 15:54:56.591" endtime="20200903 15:54:56.968"></status>
+</kw>
+<status status="PASS" starttime="20200903 15:54:56.590" endtime="20200903 15:54:56.968"></status>
+</kw>
+<kw name="And the user clicks on login">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:Login</arg>
+<arg>${ClickLogin}</arg>
+</arguments>
+<msg timestamp="20200903 15:54:56.970" level="INFO">Clicking element 'id:Login'.</msg>
+<status status="PASS" starttime="20200903 15:54:56.969" endtime="20200903 15:55:05.491"></status>
+</kw>
+<status status="PASS" starttime="20200903 15:54:56.969" endtime="20200903 15:55:05.492"></status>
+</kw>
+<kw name="Then NHS Test and Trace home page is displayed">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Response}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200903 15:55:08.511" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200903 15:55:05.570" endtime="20200903 15:55:08.512"></status>
+</kw>
+<msg timestamp="20200903 15:55:08.528" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=85.0.4183.83)
+</msg>
+<status status="FAIL" starttime="20200903 15:55:05.494" endtime="20200903 15:55:08.528"></status>
+</kw>
+<status status="FAIL" starttime="20200903 15:55:05.493" endtime="20200903 15:55:08.529"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20200903 15:54:42.251" endtime="20200903 15:55:08.531" critical="yes">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=85.0.4183.83)
+</status>
+</test>
+<doc>As a tester
+I want to specify feature files and translate it to robotframework
+So I can use the User stories from JIRA</doc>
+<status status="FAIL" starttime="20200903 15:54:41.418" endtime="20200903 15:55:08.538"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="NHSCON 001 Login">NHSCON 001 Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

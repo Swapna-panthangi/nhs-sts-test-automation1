@@ -1,0 +1,24 @@
+*** Variables ***
+
+${browser}      Firefox
+${SITEURL}      https://nhs--nhstest.my.salesforce.com/
+${Username}     geetha.karthick-cic-uk@ibm.com.nhstest
+${Password}     Remote01022019#
+${ClickLogin}
+${actual_url}       https://nhs--nhstest.lightning.force.com/one/one.app
+${DropdownMenu}     xpath://button[@title='Show Navigation Menu']
+
+*** Keywords ***
+
+Open Login Page
+        Open Browser   ${SITEURL}   ${browser}
+        Input Text   id:username  ${Username}
+        Input Text   id:password  ${Password}
+        Click Element    id:Login  ${ClickLogin}
+        Set Browser Implicit Wait     15s
+         ${Title}=        Get Title
+         ${new_url}   Get Location
+#        Should Be Equal            ${new_url}     ${actual_url}
+
+Dropdown Menu Selection
+          Click Element   ${DropdownMenu}

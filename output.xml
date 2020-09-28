@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on darwin)" generated="20200901 17:06:45.662" rpa="false">
+<suite id="s1" name="Sample" source="/Users/swapnapanthangi/Robot_Automation_Test/Tests/Salesforce/FunctionalTests/Sample.robot">
+<test id="s1-t1" name="This is sample Test case for login to application">
+<kw name="Requests">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://nhs--nhstest.my.salesforce.com/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200901 17:06:45.988" level="INFO">Opening browser 'chrome' to base url 'https://nhs--nhstest.my.salesforce.com/'.</msg>
+<status status="PASS" starttime="20200901 17:06:45.988" endtime="20200901 17:06:53.155"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:username</arg>
+<arg>swapna.panthangi-cic-uk@ibm.com.nhstest</arg>
+</arguments>
+<msg timestamp="20200901 17:06:53.155" level="INFO">Typing text 'swapna.panthangi-cic-uk@ibm.com.nhstest' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20200901 17:06:53.155" endtime="20200901 17:06:53.386"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>Omsrisairam$6</arg>
+</arguments>
+<msg timestamp="20200901 17:06:53.386" level="INFO">Typing text 'Omsrisairam$6' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200901 17:06:53.386" endtime="20200901 17:06:53.488"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:Login</arg>
+</arguments>
+<msg timestamp="20200901 17:06:53.489" level="INFO">Clicking element 'id:Login'.</msg>
+<status status="PASS" starttime="20200901 17:06:53.489" endtime="20200901 17:06:55.581"></status>
+</kw>
+<status status="PASS" starttime="20200901 17:06:45.987" endtime="20200901 17:06:55.581"></status>
+</kw>
+<doc>Login Application Test</doc>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" starttime="20200901 17:06:45.986" endtime="20200901 17:06:55.582" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200901 17:06:45.663" endtime="20200901 17:06:55.583"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Sample">Sample</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
