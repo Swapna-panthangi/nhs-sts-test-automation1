@@ -6,31 +6,28 @@ Resource     ${EXECDIR}/Resources/AgentAccount1Login.robot
 Resource     ${EXECDIR}/Resources/TestDependencies_Accounts.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
-*** Variables ***
-
-${RESOURCE_PATH}
+** Variables ***
+@{BROWSERS}       HeadlessChrome    HeadlessFirefox
+${BROWSER}
 
 
 *** Test Cases ***
+Test with Several Browsers
 
-Given Agent Logs in
-   Open Login page
-   Maximize Browser Window
-   [tags]  SmokeTest
+    FOR  ${Browser}  IN   @{BROWSERS}
+         Set Global Variable   ${BROWSER}   ${Browser}
+         log to console  Open Login page ${BROWSER}
 
-When Click on New Household Member tab
+     Given Agent Logs in
+         Maximize Browser Window
+         Dropdown Menu Selection
 
-  Dropdown Menu Selection
+     When Click on Account Dropdown Selection
 
-  Account Dropdown Selection
+     NewHousehold Pageload
 
-New Household Member page loads
+      Then Agent Logs out
 
-   NewHousehold Pageload
-
-Then Agent Logs out
-
-     Agent Logout
-
-[Teardown]     Close Window
+    END
+[Teardown]      Close Window
 

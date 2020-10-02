@@ -2,30 +2,31 @@
 
 Library     SeleniumLibrary
 Library     RequestsLibrary
-Resource     ${EXECDIR}/Resources/AgentAccountLogin.robot
+Resource     ${EXECDIR}/Resources/AgentAccount1Login.robot
 Resource     ${EXECDIR}/Resources/TestDependencies_Accounts.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
 *** Variables ***
-@{BROWSERS}       HeadlessChrome    HeadlessFirefox
+@{BROWSERS}       Chrome   Firefox
 ${BROWSER}
 
 
-
 *** Test Cases ***
-
 Test with Several Browsers
 
     FOR  ${Browser}  IN   @{BROWSERS}
          Set Global Variable   ${BROWSER}   ${Browser}
          log to console  Open Login page ${BROWSER}
-    Given Agent Logs in
+
+     Given Agent Logs in
          Maximize Browser Window
          Dropdown Menu Selection
 
-    When click on Start new clinical assessment
+     When Click on Account Dropdown Selection
+
+     NewEncounter Pageload
 
     Then Agent Logs out
 
-    END
+      END
 [Teardown]      Close Window

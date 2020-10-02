@@ -7,13 +7,11 @@ Resource     ${EXECDIR}/Resources/TestDependencies_Accounts.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
 *** Variables ***
-@{BROWSERS}       HeadlessChrome    HeadlessFirefox
+@{BROWSERS}       Chrome   Firefox
 ${BROWSER}
 
 
-
 *** Test Cases ***
-
 Test with Several Browsers
 
     FOR  ${Browser}  IN   @{BROWSERS}

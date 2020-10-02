@@ -13,7 +13,7 @@ ${CloseOpenedcase}      xpath://span[contains(@title,'Close 00002714')]
 *** Keywords ***
 
 
-Agent Logout
+Then Agent Logs out
     Wait Until Element Is Enabled        ${clickprofile}     10s
     Click Element                        ${clickprofile}
     Click Element                        ${ClickLogout}

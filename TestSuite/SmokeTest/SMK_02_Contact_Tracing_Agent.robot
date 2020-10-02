@@ -1,31 +1,34 @@
 *** Settings ***
-Library      SeleniumLibrary
-Library      RequestsLibrary
-Library      robot.libraries.DateTime
+Library  SeleniumLibrary
+Library  RequestsLibrary
 Resource     ${EXECDIR}/Resources/AgentLogin.robot
 Resource     ${EXECDIR}/Resources/TestDependencies_cases.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
+
 *** Variables ***
-${RESOURCE_PATH}
+@{BROWSERS}       HeadlessChrome    HeadlessFirefox
+${BROWSER}
+
 
 *** Test Cases ***
+Test with Several Browsers
 
-Given Agent Logs in
-   Open Login page
-   Maximize Browser Window
-    [tags]  SmokeTest
+    FOR  ${Browser}  IN   @{BROWSERS}
+         Set Global Variable   ${BROWSER}   ${Browser}
+         log to console  Open Login page ${BROWSER}
+     Given Agent Logs in
+         Maximize Browser Window
+         Dropdown Menu Selection
+        #Case assignment to Agent
 
-When Click on Start contact Tracing
-    Dropdown Menu Selection
-    Start contact Tracing
+    When Click on Start contact Tracing
 
-#    Scroll Page To Location   0     2000
-
-Then Agent Logs out
-     Agent Logout
-
+    Then Agent Logs out
+    END
 [Teardown]      Close Window
+
+
 
 
 

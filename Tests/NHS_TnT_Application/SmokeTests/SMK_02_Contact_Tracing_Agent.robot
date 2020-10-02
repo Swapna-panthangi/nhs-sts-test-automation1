@@ -7,25 +7,26 @@ Resource     ${EXECDIR}/Resources/TestDependencies_cases.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
 *** Variables ***
-${RESOURCE_PATH}
+@{BROWSERS}       Chrome   Firefox
+${BROWSER}
+
 
 *** Test Cases ***
+Test with Several Browsers
 
-Given Agent Logs in
-   Open Login page
-   Maximize Browser Window
+    FOR  ${Browser}  IN   @{BROWSERS}
+         Set Global Variable   ${BROWSER}   ${Browser}
+         log to console  Open Login page ${BROWSER}
+     Given Agent Logs in
+         Maximize Browser Window
+         Dropdown Menu Selection
+        #Case assignment to Agent
 
-When Click on Start contact Tracing
-    Dropdown Menu Selection
-    Start contact Tracing
+    When Click on Start contact Tracing
 
-#Scroll Page
-#    Scroll Page To Location   0   2000
-
-Then Agent Logs out
-     Agent Logout
-
-#[Teardown]  Close Browser
+    Then Agent Logs out
+    END
+[Teardown]      Close Window
 
 
 
