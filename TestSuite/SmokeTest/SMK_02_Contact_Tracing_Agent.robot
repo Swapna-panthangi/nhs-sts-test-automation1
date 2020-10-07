@@ -7,18 +7,21 @@ Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/Logout.robot
 
 
 *** Variables ***
-@{BROWSERS}       HeadlessChrome    HeadlessFirefox
+@{BROWSERS}       Firefox
 ${BROWSER}
 
 
 *** Test Cases ***
 Test with Several Browsers
-
     FOR  ${Browser}  IN   @{BROWSERS}
          Set Global Variable   ${BROWSER}   ${Browser}
          log to console  Open Login page ${BROWSER}
-     Given Agent Logs in
+         Run Keyword If  '${BROWSER}' =='Firefox'
+         ...   Given Agent Logs into Firefox Browser
+         ...   ELSE
+         ...   Given Agent Logs into Chrome Browser
          Maximize Browser Window
+     Agent provides the inputs
          Dropdown Menu Selection
         #Case assignment to Agent
 
@@ -26,7 +29,7 @@ Test with Several Browsers
 
     Then Agent Logs out
     END
-[Teardown]      Close Window
+[Teardown]    Close Window
 
 
 
