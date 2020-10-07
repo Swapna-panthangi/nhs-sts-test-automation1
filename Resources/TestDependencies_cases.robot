@@ -2,6 +2,8 @@
 
 
 ${Clickdropdown}            xpath: //button[@title='Show Navigation Menu']
+${SelectOption}              xpath://a[contains(@title, 'Cases')]
+${SelectDropdownItems}       xpath://a[contains(@className, 'menuItem')]
 ${ClickCases}               xpath: //*[@id="navMenuList"]/div/ul/li[7]/div
 ${ClickData}                xpath:    //*[@id="navMenuList"]/div/ul/li[7]/div/a/span[2]/span
 ${ListView}                 xpath: //a[@title='Select List View']
@@ -60,6 +62,10 @@ When Click on Start contact Tracing
 
    Click Element            ${Clickdropdown}
    Sleep  4s
+   #Click Element            ${SelectDropdownItems}
+   Sleep  2s
+   Click Element           ${SelectOption}
+   Sleep  3s
    Click Element            ${CaseSearch}
    Input Text               ${CaseSearch}       ${caseNumber}
    Click Element             ${SelectCaseNumber}

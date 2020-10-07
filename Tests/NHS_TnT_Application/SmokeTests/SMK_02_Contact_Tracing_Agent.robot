@@ -7,18 +7,26 @@ Resource     ${EXECDIR}/Resources/TestDependencies_cases.robot
 Resource     ${EXECDIR}/Resources/Logout.robot
 
 *** Variables ***
-@{BROWSERS}       Chrome   Firefox
+@{BROWSERS}      Chrome    Firefox
 ${BROWSER}
 
 
+
 *** Test Cases ***
+
 Test with Several Browsers
 
     FOR  ${Browser}  IN   @{BROWSERS}
          Set Global Variable   ${BROWSER}   ${Browser}
          log to console  Open Login page ${BROWSER}
-     Given Agent Logs in
+
+         Run Keyword If  '${BROWSER}' =='Firefox'
+         ...   Given Agent Logs into Firefox Browser
+         ...   ELSE
+         ...   Given Agent Logs into Chrome Browser
+
          Maximize Browser Window
+     Agent provides the inputs
          Dropdown Menu Selection
         #Case assignment to Agent
 

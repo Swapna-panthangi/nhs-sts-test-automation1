@@ -2,9 +2,9 @@
 
 Library     SeleniumLibrary
 Library     RequestsLibrary
-Resource     ${EXECDIR}/Resources/AgentAccount1Login.robot
-Resource     ${EXECDIR}/Resources/TestDependencies_Accounts.robot
-Resource     ${EXECDIR}/Resources/Logout.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/AgentAccount1Login.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/TestDependencies_Accounts.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/Logout.robot
 
 *** Variables ***
 @{BROWSERS}       HeadlessChrome    HeadlessFirefox

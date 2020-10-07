@@ -2,6 +2,7 @@
 
 
 ${ClickAccountDropdown}             xpath://button[@title='Show Navigation Menu']
+${SelectOption}                     xpath://a[@title='Leads']
 ${ClickAccounts1}                   xpath://span[contains(text(),'Accounts')]
 ${ClickAccounts}                    xpath://*[@id='navMenuList']/div/ul/li[5]/div/a
 ${SelectAccountName}                xpath://a[contains(@title,'Randall Newton')]
@@ -27,15 +28,20 @@ ${clickopenedAccount_HM}               xpath://button[contains(@title,'Close Pat
 When click on Start new clinical assessment
 
 #   Click link   ${ClickAccounts}
+        Click Element                    ${ClickAccountDropdown}
+        Sleep  2s
+        Click Element                    ${SelectOption}
+        Sleep  4s
         Set Browser Implicit Wait               15s
+
        # Wait Until Page Contains Element     ${AccountSearch}       20s
         Click Element                        ${AccountSearch1}
         Input Text                           ${AccountSearch1}        ${AccountName}
         Press Keys                           ${AccountSearch1}          ENTER
         Click Element                        ${SelectAccountName}
-        Sleep  4s
+        Sleep  5s
        # Wait Until Page Contains Element     ${NewClinicalAssessment}     25s
-        Click button                         ${NewClinicalAssessment}
+        Click Element                         ${NewClinicalAssessment}
         #Wait Until Page Contains Element     ${Next}                       20s
         Sleep  4s
         #Wait Until Page Contains Element     ${CloseWindow}                 10s

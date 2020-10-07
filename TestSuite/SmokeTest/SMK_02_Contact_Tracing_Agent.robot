@@ -1,9 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library  RequestsLibrary
-Resource     ${EXECDIR}/Resources/AgentLogin.robot
-Resource     ${EXECDIR}/Resources/TestDependencies_cases.robot
-Resource     ${EXECDIR}/Resources/Logout.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/AgentLogin.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/TestDependencies_cases.robot
+Resource     ${EXECDIR}/nhs-sts-test-automation1/Resources/Logout.robot
 
 
 *** Variables ***
