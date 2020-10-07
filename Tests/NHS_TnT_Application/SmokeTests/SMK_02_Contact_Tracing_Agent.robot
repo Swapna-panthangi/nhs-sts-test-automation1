@@ -34,7 +34,7 @@ Test with Several Browsers
 
     Then Agent Logs out
     END
-[Teardown]      Close Window
+    [Teardown]      Close Window
 
 
 

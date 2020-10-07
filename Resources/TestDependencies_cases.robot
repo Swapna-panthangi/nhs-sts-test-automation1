@@ -28,7 +28,7 @@ ${NextButton}               xpath://button[@title='Next']
 ${CloseCase}                xpath://button[contains(@title,'Close 00002723')]
 ${CaseOwner}                xpath://*[@id="2947:0"]/div/div[4]/div[2]/div/div[1]/span
 ${EditCaseOwner}             xpath: //button[@title='Edit Case Owner']
-${ButtonClick}               css:#tab-3 > slot > flexipage-component2 > slot > flexipage-aura-wrapper > div > article > div > div > div.content > footer > div.actionsRight > button
+${ButtonClick}                  css:#tab-3 > slot > flexipage-component2 > slot > flexipage-aura-wrapper > div > article > div > div > div.content > footer > div.actionsRight > button
 ${deleteIcon}                  css=span.deleteIcon
 ${CaseOwnerDropdownbutton}      xpath://*[@id='4016:0']/div/a
 ${SelectCaseOwnerUsers}         xpath://span[contains(@title, 'Users')]
