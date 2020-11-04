@@ -3,7 +3,7 @@
 @{BROWSERS}         Chrome  Firefox
 ${SITEURL}          https://nhs--nhstest.my.salesforce.com/
 ${Username}         geetha.karthick-cic-uk@ibm.com.nhstest
-${Password}         Remote01022019#
+${Password}         *******&&&
 ${ClickLogin}
 ${actual_url}       https://nhs--nhstest.lightning.force.com/one/one.app
 ${DropdownMenu}     xpath://button[@title='Show Navigation Menu']
