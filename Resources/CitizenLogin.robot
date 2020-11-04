@@ -7,7 +7,7 @@ Resource        ${EXECDIR}/Resources/TestDependencies.robot
 ${browser}          chrome
 ${SITEURL}          https://nhs--nhstest.my.salesforce.com/
 ${Username}         kapil.bhatt-cic.uk@ibm.com.nhstest
-${Password}         NHSTest541
+${Password}         ********
 ${ClickLogin}
 ${DropdownMenu}     xpath://button[@title='Show Navigation Menu']
 
