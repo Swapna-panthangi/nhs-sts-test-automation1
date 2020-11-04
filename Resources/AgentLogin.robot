@@ -6,7 +6,7 @@
 #@{BROWSERS}         Firefox    Chrome
 ${SITEURL}          https://nhs--nhstest.my.salesforce.com/
 ${Username}         swapna.panthangi-cic-uk@ibm.com.nhstest
-${Password}         Nhs@061990
+${Password}         ***********
 ${ClickLogin}
 ${actual_url}       https://nhs--nhstest.lightning.force.com/one/one.app
 ${DropdownMenu}     xpath://button[@title='Show Navigation Menu']
